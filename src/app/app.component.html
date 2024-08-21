@@ -1,7 +1,6 @@
 <div class="operations">
     <div class="operations__filter">
-        <input class="operations__filter-input" type="text" placeholder="Filtrar por Nome"
-            (keyup)="onChangeCustomerName($event)">
+        <input class="operations__filter-input" type="text" placeholder="Filtrar por Nome" [(ngModel)]="customerName">
     </div>
     <div class="operations__table">
         <table>
@@ -25,8 +24,8 @@
                                 height="20" />
                         </p>
                     </td>
-                    <td class="operations__table-cell">{{ operation.operationDate | date }}</td>
-                    <td class="operations__table-cell">{{ operation.operationDate | date : 'HH:mm aa' : '-0300' }}</td>
+                    <td class="operations__table-cell">{{ operation.operationDate | date : 'shortDate'}}</td>
+                    <td class="operations__table-cell">{{ operation.operationDate | date : 'HH:mm aa' }}</td>
                     <td class="operations__table-cell">{{ operation.operationValue | currency }}</td>
                     <td class="operations__table-cell">{{ operation.operationRisck | percent : '1.0-2' }}</td>
                 </tr>

@@ -17,8 +17,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.operations$ = this._operationsService.getOperations();
   }
-
-  onChangeCustomerName(event: Event): void {
-    this.customerName = (event.target as HTMLInputElement).value;
-  }
 }
